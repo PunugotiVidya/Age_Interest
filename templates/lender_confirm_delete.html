@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Delete Post</legend>
+        </fieldset>
+        <div class= "form-group"> <h3>Are You Sure want to Delete the post "{{object.takenPerson}}" with StartDate "{{object.startDate}}"?</h3></div>
+        <div class="form-group">
+            <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+            <a class="btn btn-outline-secondary" href="{% url 'list-interests'%}" type="submit">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock content %}

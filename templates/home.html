@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1 class="text-center">HOME PAGE</h1>
+    <div class="jumbotron">
+        <div class="content-section">
+            <div>
+                <h2 class="text-dark">Age&Interest Application</h2>
+                <p>
+                    This appliction was developed by using <strong>Python+Django.</strong>
+                    When the Users get the application can see the following navigations bars before login.
+                </p>
+                <ul class="text-primary">
+                    <a href="#home-section"><li>Home</li></a>
+                    <a href="#about-section"><li>About</li></a>
+                    <a href="#login-section"><li>Login</li></a>
+                    <a href="#register-section"><li>Register</li></a>
+                </ul>
+            </div>
+            <br>
+            <div id="home-section">
+                <h3 style="text-decoration: underline;">HOME</h3>
+                <p>This Home page will Describe in depth about the application. It will Show all the navigation bars which are used in the application. Also, It will Describe about each navigation bar with logic behind it.</p>
+            </div>
+            <br>
+            <div id="about-section">
+                <h3 style="text-decoration: underline;">ABOUT</h3>
+                <p>In About page, Users can be able to know about the developer of the website and can able to contact with developer using social media network.</p>
+            </div>
+            <br>
+            <div id="register-section">
+                <h3 style="text-decoration: underline;">REGISTER</h3>
+                <p>In Register page, Users can be able to Create and account using the following mandatory fields.</p>
+                <ol class="text-muted">
+                    <li>Username</li>
+                    <li>Email Address</li>
+                    <li>Password</li>
+                    <li>Confirm Password</li>
+                    <br>
+                    <p>After Registering the page, the User will be redirected to Login page inorder to login the application.</p>
+                </ol>
+            </div>
+            <br>
+            <div id="login-section">
+                <h3 style="text-decoration: underline;">LOGIN</h3>
+                <p>In Login page, Users can be able to Login using <strong>UserName</strong> and <strong>Password</strong> which are created using Registration form. If the User has no Account It will asks the User to create and account in the botton of Login page.</p>
+            </div>
+            <br>
+            <br>
+            <div>
+                <p>After Login, the Users can be able to the following Navigations bars.</p>
+                <ul class="text-primary">
+                    <a href="#findInterests-section"><li>Find Interest</li></a>
+                    <a href="#ageCalculation-section"><li>Calculate Age</li></a>
+                    <a href="#listInterest-section"><li>List Interests</li></a>
+                    <a href="#store-section"><li>Store Interests</li></a>
+                    <a href="#signout-section"><li>Sign Out</li></a>
+                </ul>
+            </div>
+            <br>
+            <div>
+                <div id="findInterests-section">
+                    <h3 style="text-decoration: underline;">FIND INTERESTS</h3>
+                    <p>In Find Interest Page, the User will be asked with following form details.</p>
+                    <ol>
+                        <li>Amount</li>
+                        <li>Rate</li>
+                        <li>Start Date</li>
+                        <li>Current Date</li>
+                    </ol>
+                    <p> The <strong>Amount</strong> Represent the amount given to the person for Simple Interest</p>
+                    <p> The <strong>Rate</strong> represent the rate at which amount interest is calculated</p>
+                    <p> The<strong>Start Date</strong> represent the date at which the amount was taken</p>
+                    <p> The <strong>Current Date</strong> represent the End Date for calculation.</p>
+                    <p> After click on <strong>Find Interest</strong> the Interest will be calculated and will be shown at the top</p>
+                </div>
+            </div>
+            <br>
+            <div>
+                <div id="ageCalculation-section">
+                    <h3 style="text-decoration: underline;">CALCULATE AGE</h3>
+                    <p>In Calculate Age Page, the User will be asked with following form details.</p>
+                    <ol>
+                        <li>Born DOB</li>
+                        <li>Today Date</li>
+                    </ol>
+                    <p> The<strong>Born DOB</strong> represent the Date at which user Born</p>
+                    <p> The <strong>Current Date</strong> represent the Today Date for calculation.</p>
+                    <p> After click on <strong>Calculate Age</strong> the Age will be calculated and will be shown at the top</p>
+                </div>
+            </div>
+            <br>
+            <div>
+                <div id="store-section">
+                    <h3 style="text-decoration: underline;">Store Interest</h3>
+                    <p>In Store Interests, It can able to store the interest and later displayed in list Interests in List Interest navigation bar. It is using the following form fields.</p>
+                    <ol>
+                        <li>Taken Person</li>
+                        <li>Start Date</li>
+                        <li>Taken Amount</li>
+                        <li>Rate</li>
+                    </ol>
+
+                </div>
+            </div>
+
+            <br>
+            <div>
+                <div id="listInterest-section">
+                    <h3 style="text-decoration: underline;">LIST INTERESTS</h3>
+                    <p>In List Interests, It will List all the Interests which are created using Store Interests, User with Delete button for each lender User. If User wants to Delete the specific taken person he can delete by using delete button.</p>
+                    <p>If the User clicks on the name of the lender person, then it will display all the amounts with interest taken by that particular person.</p>
+                </div>
+            </div>
+            <br>
+            <div>
+                <div id="signout-section">
+                    <h3 style="text-decoration: underline;">SIGN OUT</h3>
+                    <p>If the User clicks on <strong>Sign Out</strong> page, the User will be logged out and will ask again the User to login again to get the Required <strong>Age&Interest</strong> Forms.</p>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+{% endblock content %}

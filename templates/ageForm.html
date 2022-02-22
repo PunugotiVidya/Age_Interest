@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4 font-green">FIND AGE</legend>
+            {{form|crispy}}
+        </fieldset>
+        <div class="mt-4 form-group">
+            <button class="btn btn-info" type="submit">CALCULATE AGE</button>
+        </div>
+    </form>
+    {% if ageDict %}
+        <div class="border-top mt-4 pt-2">
+            <span id="header-details">AGE OF PERSON</span>
+            <table class="mt-4" id ="interestTable" >
+
+                <tr>
+                    <td id="yellow-result" class="pt-3"><span id="table-data">You Have Compeleted <strong>{{ageDict.ageInYears}} Years</strong> , <strong >{{ageDict.remainingMonths}}</strong> Months and  <strong>{{ageDict.remainingDays}}</strong> Days!! </span></td>
+                </tr>
+
+                <tr>
+                    <td id="age-years" class="mt-4 pt-3"><span id="table-data">You Have Compeleted <strong>{{ageDict.ageInYears}} Years</strong> and <strong >{{ageDict.ageRunning}}</strong><sup>'st</sup> Year running for you!! </span></td>
+                </tr>
+            </table>
+        </div>
+    {% endif %}
+</div>
+<script>
+    // var color = ["yellow","green","red","blue","black","maroon"]
+    var lis = document.getElementById("age-years")
+    lis.style.backgroundColor = "black";
+    lis.style.color = "white";
+    function changeColor(){
+        if(lis.style.color == "white"){
+            lis.style.color = "orange";
+        }
+        else if(lis.style.color == "orange"){
+            lis.style.color = "yellow";
+        }
+        else if(lis.style.color == "yellow"){
+            lis.style.color = "#d92ee8";
+        }
+        else if(lis.style.color == "#d92ee8"){
+            lis.style.color = "red";
+        }
+        else if(lis.style.color == "red"){
+            lis.style.color = "green";
+        }
+        else{
+            lis.style.color = "white";
+        }
+
+    }
+    setInterval(changeColor, 3000)
+</script>
+{% endblock content %}

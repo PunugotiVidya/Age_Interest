@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4 font-green">INTEREST FORM</legend>
+            {{form|crispy}}
+        </fieldset>
+        <div class="mt-4 form-group">
+            <button class="btn btn-info" type="submit">Find Interest</button>
+        </div>
+    </form>
+    {% if interestDict %}
+        <div class="border-top mt-4 pt-2">
+            <span id="header-details">DETAILS OF INTEREST</span>
+            <table class="mt-4" id ="interestTable" >
+                <tr>
+                    <td><span id="table-data">Interest for only <bold>{{interestDict.totalMonths}}</bold> Months is <bold id="yellow-result">{{interestDict.interest}}</bold> </span></td>
+                </tr>
+                <tr>
+                    <td><span id="table-data">Interest for <bold>{{interestDict.totalMonths}}</bold> Months and <bold>{{interestDict.fifthMultiplierDay}}</bold> Days is <bold id="yellow-result">{{interestDict.fifthMultiplierInterest}}</bold> </span></td>
+                </tr>
+                <tr>
+                    <td><span id="table-data">Total Duration is <bold>{{interestDict.totalYears}}</bold> Years , <bold>{{interestDict.remainingMonths}}</bold> Months and <bold>{{interestDict.remainingDays}}</bold> Days</span></td>
+                </tr>
+                <tr>
+                    <td><span id="table-data">Total Months are <bold>{{interestDict.totalMonths}}</bold> Months , <bold>{{interestDict.remainingDays}}</bold> Days</span></td>
+                </tr>
+            </table>
+        </div>
+    {% endif %}
+</div>
+{% endblock content %}
