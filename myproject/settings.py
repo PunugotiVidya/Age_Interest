@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 from django.contrib.messages import constants as messages
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,7 +28,7 @@ SECRET_KEY = 'django-insecure-f=y0r40idtkwc%^-kfxdk1_pqbvm8&z+o8vlv#2%8vz2i$n8ly
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['age-interest.herokuapp.com']
 
 
 # Application definition
@@ -141,3 +142,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'list-interests'
 LOGIN_URL = 'login'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+django_heroku.settings(locals())
